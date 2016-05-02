@@ -7,7 +7,7 @@
  * MainCtrl - controller
  */
 function MainCtrl() {
-    this.helloText = 'Welcome in PhoneBook';
+    this.helloText = 'Welcome in CoffeeMananger';
     this.descriptionText = 'Demo application for the event "Friday of Knowledge".';
 
 };
