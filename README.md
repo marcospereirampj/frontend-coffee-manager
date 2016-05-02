@@ -1,1 +1,3 @@
-# frontend-sexta-conhecimento
+# DemoApp - Friday of Knowledge
+
+Demo application for the event "Friday of Knowledge".

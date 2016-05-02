@@ -1,10 +1,10 @@
 {
-  "name": "Sexta do Conhecimento",
+  "name": "Friday of Knowledge",
   "version": "1.0",
   "authors": [
     "Marcos Pereira"
   ],
-  "description": "Sexta do Conhecimento do Instituto de Tecnologia em Informática e Informação do Estado de Alagoas",
+  "description": "Demo application for the event Friday of Knowledge.",
   "main": "app/index.html",
   "private": true,
   "ignore": [

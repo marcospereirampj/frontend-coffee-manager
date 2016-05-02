@@ -1,9 +1,10 @@
 /**
- * Sexta do Conhecimento
- * ITEC 2016
+ * Demo application for the event Friday of Knowledge.
+ * Marcos Perira - ITEC 2016
  */
+
 (function () {
-    angular.module('sexta', [
+    angular.module('friday', [
         'ui.router',                    // Routing
         'ui.bootstrap'                 // Bootstrap
     ])

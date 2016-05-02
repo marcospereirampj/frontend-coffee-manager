@@ -1,20 +1,18 @@
 /**
- * Sexta do Conhecimento
- * ITEC 2016
+ * Demo application for the event Friday of Knowledge.
+ * Marcos Perira - ITEC 2016
  */
-
+ 
 /**
  * MainCtrl - controller
  */
 function MainCtrl() {
-
-    this.userName = 'Example user';
-    this.helloText = 'Welcome in SeedProject';
-    this.descriptionText = 'It is an application skeleton for a typical AngularJS web app. You can use it to quickly bootstrap your angular webapp projects and dev environment for these projects.';
+    this.helloText = 'Welcome in myPhonebook';
+    this.descriptionText = 'Demo application for the event "Friday of Knowledge".';
 
 };
 
 
 angular
-    .module('sexta')
+    .module('friday')
     .controller('MainCtrl', MainCtrl)

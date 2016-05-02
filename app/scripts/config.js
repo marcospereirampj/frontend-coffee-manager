@@ -1,7 +1,8 @@
 /**
- * Sexta do Conhecimento
- * ITEC 2016
+ * Demo application for the event Friday of Knowledge.
+ * Marcos Perira - ITEC 2016
  */
+
 function config($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("/index/main");
 
@@ -24,7 +25,7 @@ function config($stateProvider, $urlRouterProvider) {
         })
 }
 angular
-    .module('sexta')
+    .module('friday')
     .config(config)
     .run(function($rootScope, $state) {
         $rootScope.$state = $state;

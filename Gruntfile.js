@@ -17,7 +17,7 @@ module.exports = function (grunt) {
     grunt.initConfig({
 
         // Project settings
-        sexta: appConfig,
+        friday: appConfig,
 
         // The grunt server settings
         connect: {
@@ -44,7 +44,7 @@ module.exports = function (grunt) {
             dist: {
                 options: {
                     open: true,
-                    base: '<%= sexta.dist %>'
+                    base: '<%= friday.dist %>'
                 }
             }
         },
@@ -56,7 +56,7 @@ module.exports = function (grunt) {
                     optimization: 2
                 },
                 files: {
-                    "app/styles/style.css": "app/less/style.less"
+                    "app/styles/styles.css": "app/less/styles.less"
                 }
             }
         },
@@ -71,7 +71,7 @@ module.exports = function (grunt) {
                 },
             },
             js: {
-                files: ['<%= sexta.app %>/scripts/{,*/}*.js'],
+                files: ['<%= friday.app %>/scripts/{,*/}*.js'],
                 options: {
                     livereload: '<%= connect.options.livereload %>'
                 }
@@ -81,9 +81,9 @@ module.exports = function (grunt) {
                     livereload: '<%= connect.options.livereload %>'
                 },
                 files: [
-                    '<%= sexta.app %>/**/*.html',
+                    '<%= friday.app %>/**/*.html',
                     '.tmp/styles/{,*/}*.css',
-                    '<%= sexta.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+                    '<%= friday.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
                 ]
             }
         },
@@ -102,8 +102,8 @@ module.exports = function (grunt) {
                     dot: true,
                     src: [
                         '.tmp',
-                        '<%= sexta.dist %>/{,*/}*',
-                        '!<%= sexta.dist %>/.git*'
+                        '<%= friday.dist %>/{,*/}*',
+                        '!<%= friday.dist %>/.git*'
                     ]
                 }]
             },
@@ -116,8 +116,8 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         dot: true,
-                        cwd: '<%= sexta.app %>',
-                        dest: '<%= sexta.dist %>',
+                        cwd: '<%= friday.app %>',
+                        dest: '<%= friday.dist %>',
                         src: [
                             '*.{ico,png,txt}',
                             '.htaccess',
@@ -132,20 +132,20 @@ module.exports = function (grunt) {
                         dot: true,
                         cwd: 'bower_components/fontawesome',
                         src: ['fonts/*.*'],
-                        dest: '<%= sexta.dist %>'
+                        dest: '<%= friday.dist %>'
                     },
                     {
                         expand: true,
                         dot: true,
                         cwd: 'bower_components/bootstrap',
                         src: ['fonts/*.*'],
-                        dest: '<%= sexta.dist %>'
+                        dest: '<%= friday.dist %>'
                     },
                 ]
             },
             styles: {
                 expand: true,
-                cwd: '<%= sexta.app %>/styles',
+                cwd: '<%= friday.app %>/styles',
                 dest: '.tmp/styles/',
                 src: '{,*/}*.css'
             }
@@ -154,9 +154,9 @@ module.exports = function (grunt) {
         filerev: {
             dist: {
                 src: [
-                    '<%= sexta.dist %>/scripts/{,*/}*.js',
-                    '<%= sexta.dist %>/styles/{,*/}*.css',
-                    '<%= sexta.dist %>/styles/fonts/*'
+                    '<%= friday.dist %>/scripts/{,*/}*.js',
+                    '<%= friday.dist %>/styles/{,*/}*.css',
+                    '<%= friday.dist %>/styles/fonts/*'
                 ]
             }
         },
@@ -171,9 +171,9 @@ module.exports = function (grunt) {
                 },
                 files: [{
                     expand: true,
-                    cwd: '<%= sexta.dist %>',
+                    cwd: '<%= friday.dist %>',
                     src: ['*.html', 'views/{,*/}*.html'],
-                    dest: '<%= sexta.dist %>'
+                    dest: '<%= friday.dist %>'
                 }]
             }
         },
