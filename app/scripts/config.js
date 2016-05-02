@@ -18,14 +18,20 @@ function config($stateProvider, $urlRouterProvider) {
             templateUrl: "views/main.html",
             data: { pageTitle: 'Example view' }
         })
-        .state('index.minor', {
-            url: "/minor",
-            templateUrl: "views/minor.html",
-            data: { pageTitle: 'Example view' }
+        .state('index.members', {
+            url: "/members",
+            templateUrl: "views/members.html",
+            data: { pageTitle: 'Members List' }
+        })
+        .state('index.queue', {
+            url: "/queue",
+            templateUrl: "views/queue.html",
+            data: { pageTitle: 'Queye List' }
         })
 }
+
 angular
-    .module('friday')
+    .module('coffeeManager')
     .config(config)
     .run(function($rootScope, $state) {
         $rootScope.$state = $state;

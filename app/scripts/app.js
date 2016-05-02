@@ -4,8 +4,10 @@
  */
 
 (function () {
-    angular.module('friday', [
+    angular.module('coffeeManager', [
         'ui.router',                    // Routing
-        'ui.bootstrap'                 // Bootstrap
+        'ui.bootstrap',                 // Bootstrap
+        'ngResource',
+        'BaseSettings'
     ])
 })();

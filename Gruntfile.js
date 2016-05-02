@@ -17,7 +17,7 @@ module.exports = function (grunt) {
     grunt.initConfig({
 
         // Project settings
-        friday: appConfig,
+        coffeeManager: appConfig,
 
         // The grunt server settings
         connect: {
@@ -44,7 +44,7 @@ module.exports = function (grunt) {
             dist: {
                 options: {
                     open: true,
-                    base: '<%= friday.dist %>'
+                    base: '<%= coffeeManager.dist %>'
                 }
             }
         },
@@ -71,7 +71,7 @@ module.exports = function (grunt) {
                 },
             },
             js: {
-                files: ['<%= friday.app %>/scripts/{,*/}*.js'],
+                files: ['<%= coffeeManager.app %>/scripts/{,*/}*.js'],
                 options: {
                     livereload: '<%= connect.options.livereload %>'
                 }
@@ -81,9 +81,9 @@ module.exports = function (grunt) {
                     livereload: '<%= connect.options.livereload %>'
                 },
                 files: [
-                    '<%= friday.app %>/**/*.html',
+                    '<%= coffeeManager.app %>/**/*.html',
                     '.tmp/styles/{,*/}*.css',
-                    '<%= friday.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+                    '<%= coffeeManager.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
                 ]
             }
         },
@@ -102,8 +102,8 @@ module.exports = function (grunt) {
                     dot: true,
                     src: [
                         '.tmp',
-                        '<%= friday.dist %>/{,*/}*',
-                        '!<%= friday.dist %>/.git*'
+                        '<%= coffeeManager.dist %>/{,*/}*',
+                        '!<%= coffeeManager.dist %>/.git*'
                     ]
                 }]
             },
@@ -116,8 +116,8 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         dot: true,
-                        cwd: '<%= friday.app %>',
-                        dest: '<%= friday.dist %>',
+                        cwd: '<%= coffeeManager.app %>',
+                        dest: '<%= coffeeManager.dist %>',
                         src: [
                             '*.{ico,png,txt}',
                             '.htaccess',
@@ -132,20 +132,20 @@ module.exports = function (grunt) {
                         dot: true,
                         cwd: 'bower_components/fontawesome',
                         src: ['fonts/*.*'],
-                        dest: '<%= friday.dist %>'
+                        dest: '<%= coffeeManager.dist %>'
                     },
                     {
                         expand: true,
                         dot: true,
                         cwd: 'bower_components/bootstrap',
                         src: ['fonts/*.*'],
-                        dest: '<%= friday.dist %>'
+                        dest: '<%= coffeeManager.dist %>'
                     },
                 ]
             },
             styles: {
                 expand: true,
-                cwd: '<%= friday.app %>/styles',
+                cwd: '<%= coffeeManager.app %>/styles',
                 dest: '.tmp/styles/',
                 src: '{,*/}*.css'
             }
@@ -154,9 +154,9 @@ module.exports = function (grunt) {
         filerev: {
             dist: {
                 src: [
-                    '<%= friday.dist %>/scripts/{,*/}*.js',
-                    '<%= friday.dist %>/styles/{,*/}*.css',
-                    '<%= friday.dist %>/styles/fonts/*'
+                    '<%= coffeeManager.dist %>/scripts/{,*/}*.js',
+                    '<%= coffeeManager.dist %>/styles/{,*/}*.css',
+                    '<%= coffeeManager.dist %>/styles/fonts/*'
                 ]
             }
         },
@@ -171,9 +171,9 @@ module.exports = function (grunt) {
                 },
                 files: [{
                     expand: true,
-                    cwd: '<%= friday.dist %>',
+                    cwd: '<%= coffeeManager.dist %>',
                     src: ['*.html', 'views/{,*/}*.html'],
-                    dest: '<%= friday.dist %>'
+                    dest: '<%= coffeeManager.dist %>'
                 }]
             }
         },
