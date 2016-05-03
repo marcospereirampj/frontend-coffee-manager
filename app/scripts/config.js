@@ -3,6 +3,17 @@
  * Marcos Perira - ITEC 2016
  */
 
+
+ angular
+     .module('coffeeManager')
+     .config(config)
+     .config(function($resourceProvider) {
+       $resourceProvider.defaults.stripTrailingSlashes = false;
+     })
+     .run(function($rootScope, $state) {
+         $rootScope.$state = $state;
+     });
+
 function config($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("/index/main");
 
@@ -29,10 +40,3 @@ function config($stateProvider, $urlRouterProvider) {
             data: { pageTitle: 'Queye List' }
         })
 }
-
-angular
-    .module('coffeeManager')
-    .config(config)
-    .run(function($rootScope, $state) {
-        $rootScope.$state = $state;
-    });

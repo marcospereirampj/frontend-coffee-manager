@@ -4,35 +4,33 @@
  */
 
 
-(function() {
+ angular
+     .module('coffeeManager')
+     .factory('Member', Member);
 
-    'use strict';
 
-	function Member($resource, BaseSettings) {
-		var url = BaseSettings.ApiURL + "members/:id";
+function Member($resource, BaseSettings) {
+ 		var url = BaseSettings.ApiURL + "members/:id";
 
-		return $resource(url, { id: "@id" }, {
-			get: {
-				method: "GET",
-        isArray: false,
-				transformResponse: function(data, headers){
-					data = JSON.parse(data);
-					return data;
-				}
-			},
+ 		return $resource(url, { id: "@id" }, {
+      update: {
+  			method: "PUT"
+  		},
+ 			get: {
+   				method: "GET",
+          isArray: false,
+   				transformResponse: function(data, headers){
+   					data = JSON.parse(data);
+   					return data;
+   				}
+ 			},
       list: {
-				method: "GET",
-        isArray: true,
-				transformResponse: function(data, headers){
-					data = JSON.parse(data);
-					return data;
-				}
-			}
-		});
-	};
-
-  angular
-      .module('coffeeManager')
-      .factory('Member', Member);
-
-})();
+   				method: "GET",
+          isArray: true,
+   				transformResponse: function(data, headers){
+   					data = JSON.parse(data);
+   					return data;
+   				}
+ 			}
+ 	  });
+};
