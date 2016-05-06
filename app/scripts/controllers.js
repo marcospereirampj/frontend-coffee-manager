@@ -37,7 +37,7 @@ function MemberCtrl(Member) {
  */
 function RegistryCtrl(Registry) {
     var vm = this;
-    vm.registries = Registry.list();
+    vm.registries = Registry.list({"ordering":"-date_created"});
 };
 
 
