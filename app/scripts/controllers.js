@@ -7,6 +7,8 @@
  angular
      .module('coffeeManager')
      .controller('MainCtrl', MainCtrl)
+     .controller('RegistryCtrl', RegistryCtrl)
+     .controller('ModalCtrl', ModalCtrl)
      .controller('ModalCtrl', ModalCtrl)
      .controller('ModalInstanceCtrl', ModalInstanceCtrl)
 
@@ -31,11 +33,28 @@ function MemberCtrl(Member) {
 
 
 /**
+ * RegistryCtrl - controller
+ */
+function RegistryCtrl(Registry) {
+    var vm = this;
+    vm.registries = Registry.list();
+};
+
+
+/**
  * QueueCtrl - controller
  */
-function QueueCtrl(Member) {
+function QueueCtrl(Member, Queue, Registry) {
     var vm = this;
     vm.members = Member.list();
+    vm.queue = Queue.list();
+
+    vm.add_registry = function(memberId){
+      vm.registry = new Registry();
+      vm.registry.member = memberId;
+      vm.registry.$save();
+      vm.queue = Queue.list();
+    }
 };
 
 

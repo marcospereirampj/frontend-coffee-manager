@@ -1,0 +1,16 @@
+<div class="wrapper wrapper-content animated fadeInRight" ng-controller="RegistryCtrl as registry_ctrl">
+    <div class="col-sm-12">
+          <div class="row">
+            <div class="col-sm-12 text-center" style="margin-bottom:10px;">
+                <h4>Registries</h4>
+            </div>
+            <div class="col-sm-12">
+              <div class="list-group">
+                <span type="button" class="list-group-item" ng-repeat="registry in registry_ctrl.registries">                
+                    {{ registry.member.name }} - {{ registry.date_created }}
+                </span>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>

@@ -39,4 +39,9 @@ function config($stateProvider, $urlRouterProvider) {
             templateUrl: "views/queue.html",
             data: { pageTitle: 'Queye List' }
         })
+        .state('index.registries', {
+            url: "/registries",
+            templateUrl: "views/registries.html",
+            data: { pageTitle: 'Registries List' }
+        })
 }

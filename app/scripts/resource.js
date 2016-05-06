@@ -6,7 +6,9 @@
 
  angular
      .module('coffeeManager')
-     .factory('Member', Member);
+     .factory('Member', Member)
+     .factory('Queue', Queue)
+     .factory('Registry', Registry)
 
 
 function Member($resource, BaseSettings) {
@@ -24,6 +26,38 @@ function Member($resource, BaseSettings) {
    					return data;
    				}
  			},
+      list: {
+   				method: "GET",
+          isArray: true,
+   				transformResponse: function(data, headers){
+   					data = JSON.parse(data);
+   					return data;
+   				}
+ 			}
+ 	  });
+};
+
+
+function Queue($resource, BaseSettings) {
+ 		var url = BaseSettings.ApiURL + "queue";
+
+ 		return $resource(url, {}, {
+      list: {
+   				method: "GET",
+          isArray: true,
+   				transformResponse: function(data, headers){
+   					data = JSON.parse(data);
+   					return data;
+   				}
+ 			}
+ 	  });
+};
+
+
+function Registry($resource, BaseSettings) {
+ 		var url = BaseSettings.ApiURL + "registries/";
+
+ 		return $resource(url, {}, {
       list: {
    				method: "GET",
           isArray: true,

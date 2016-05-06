@@ -1,4 +1,4 @@
-<div class="wrapper wrapper-content animated fadeInRight" ng-controller="MemberCtrl as member_ctrl">
+<div class="wrapper wrapper-content animated fadeInRight" ng-controller="QueueCtrl as queue_ctrl">
     <div class="col-sm-12">
           <div class="row">
             <div class="col-sm-12">
@@ -9,7 +9,7 @@
             </div>
             <div class="col-sm-12">
               <button type="button" class="list-group-item active ">
-                  Gil Rebelo
+                  {{ queue_ctrl.queue[0].member__name }}
               </button>
             </div>
           </div>
@@ -20,12 +20,12 @@
             </div>
             <div class="col-sm-12">
               <div class="list-group">
-                <span type="button" class="list-group-item" ng-repeat="member in member_ctrl.members">
-                    <a class="btn btn-default btn-xs">
+                <span type="button" class="list-group-item" ng-repeat="member in queue_ctrl.queue">
+                    <a class="btn btn-default btn-xs" ng-click="queue_ctrl.add_registry(member.member__pk)">
                         <i class="glyphicon glyphicon-plus"></i>
                     </a>
-                    <span class="badge">14</span>
-                    {{ member.name }}
+                    <span class="badge">{{ member.total }}</span>
+                    {{ member.member__name }}
                 </span>
               </div>
             </div>
